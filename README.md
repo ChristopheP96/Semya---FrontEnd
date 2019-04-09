@@ -1,8 +1,10 @@
-# Project Name
+# Semya
+
 
 ## Description
 
-Describe your project in one/two lines.
+Fill in your family tree with what you already know, and let the network fill in the gaps! 
+
 
 ## User Stories
 
