@@ -8,32 +8,39 @@ Fill in your family tree with what you already know, and let the network fill in
 
 ## User Stories
 
+- **Front Page:**  
+At the home page, the user wil lsee several articles regarding genealogy : how to investigate, some tricks and shared experiences
+He'll also be able to log in and sigh up
+Will also contain a tutorial
+
+-  **Signup/Login/Logout::**<br/>As an anon I can sign up/log in the platform so that I can start my own tree. 
+
+- **Mytree**:<br/>The page will only display a tree (1 individual at the begining (the user himself or the person he wants to start with)).
+<br/>
+The tree will grow as long as user inserts new individuals
+<br/>Each individual in the tree will have a small "console" to add a parent, a child or a partner.
+
+- **Home:**<br/>This page will display all notifiactions (connections request), general stats (you have X amount of related person in you tree), will show other users account to connect with if notifications got approved.
+
 -  **404:** As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault
--  **Signup:** As an anon I can sign up in the platform so that I can start saving favorite restaurants
--  **Login:** As a user I can login to the platform so that I can see my favorite restaurants
--  **Logout:** As a user I can logout from the platform so no one else can use it
--  **Add Restaurants** As a user I can add a restaurant so that I can share it with the community
--  **List Restaurants** As a user I want to see the restaurants so that I can choose one to eat
--  **Search Restaurants** As a user I want to search restaurants by name so that I know if it´s already in the platform
--  **Add to favorites** As a user I want to add a restaurant to favorite so that I can save the restaurants that I liked the most
--  **See my favorites** As a user I want to see my favorite restaurantes so that I can see the ones I liked the most
+
 
 ## Backlog
 
-User profile:
-- see my profile
-- upload my profile picture
-- see other users profile
-- list of events created by the user
-- list events the user is attending
+**Match individuals that could be the same person** 
+<br> 
+If a user creates a parent simimlar enough to a parent existing in another tree - both users receive a notification notifying it might be the same individual.
+<br> _Similarity of at least 90%, date of birth in a rage of 365 days._
 
-Geo Location:
-- add geolocation to events when creating
-- show event in a map in event detail page
-- show all events in a map in the event list page
+**Individuals in the tree:**<br/>
+User can click on any member on his tree to see biographical information.  (historical events, biographical events)
+- Upload pictures 
+- Upload documents (birth/death certificates)
+- Link data's from Wikipedia occuring during his lifetime (main events at 20/30/40 years old)
 
-Homepage:
-- ...
+**Homepage:**
+- User can see his own profile, update picture, and contact information.
+- user can see notifications received
   
 # Client
 
@@ -41,10 +48,11 @@ Homepage:
 
 | url | public | Functionality |
 |-----|-------|---------------|
-| `/` | true | landing page |
+| `/` | true | Front Page|
 | `/signup` | true | Signup user |
 | `/login` | true | login user |
-| `/profile` | false | profile of user |
+| `/home` | false | home page |
+| `/mytree` | false | my tree |
 
 ## Services
 
@@ -54,13 +62,6 @@ Homepage:
   - auth.logout()
   - auth.me()
   - auth.getUser() // synchronous
-- Restaurant Service
-  - restaurant.list()
-  - restaurant.search(terms)
-  - restaurant.create(data)
-  - restaurant.detail(id)
-  - restaurant.addFavorite(id)
-  - restaurant.removeFavorite(id)   
 
 # Server
 
@@ -72,16 +73,21 @@ User model
 username - String // required
 email - String // required & unique
 password - String // required
-favorites - [ObjectID<Restaurant>]
 ```
 
-Restaurant model
+Individual
 
 ```
-owner - ObjectID<User> // required
-name - String // required
-phone - String
-address - String
+Id : String // required
+First Name : String // required
+Last Name : String // required
+gender : String // required
+Date of birth : Date // required
+Place of birth : String
+Place of death : String
+Date of death : Date 
+Parents : [id, id] (max 2)
+
 ```
 
 ## API Endpoints (backend routes)
@@ -99,17 +105,17 @@ address - String
 
 ## Links
 
-### Trello/Kanban
+### Trello
 
-[Link to your trello board](https://trello.com) or picture of your physical board
+[Trello board](https://trello.com/b/eljtbfFm/semya)
 
 ### Git
 
 The url to your repository and to your deployed project
 
-[Client repository Link](https://github.com/Ironhack-PartTime-BCN/boilerplate-frontend-module-3)
+[Client repository Link](https://github.com/ChristopheP96/Semya---FrontEnd)
 
-[Server repository Link](https://github.com/Ironhack-PartTime-BCN/boilerplate-backend-module-3)
+[Server repository Link](https://github.com/ChristopheP96/Semya---API)
 
 [Deploy Link Backend](http://heroku.com)
 
@@ -119,4 +125,4 @@ The url to your repository and to your deployed project
 
 The url to your presentation slides
 
-[Slides Link](http://slides.com)
+[Slides Link](https://docs.google.com/presentation/d/1EmxYyWHjn8xdyNRBCBe-seNJuOGMbkbhc7dPZqKEdWw/edit#slide=id.p)
