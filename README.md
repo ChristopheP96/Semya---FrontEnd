@@ -73,6 +73,13 @@ User model
 username - String // required
 email - String // required & unique
 password - String // required
+id - String // required
+First Name - String // required
+Second Last Name - String
+gender : String // required
+Date of birth : Date // required
+Place of birth : String // required
+profession : String
 ```
 
 Individual
@@ -81,12 +88,14 @@ Individual
 Id : String // required
 First Name : String // required
 Last Name : String // required
+Second Last Name : String
 gender : String // required
 Date of birth : Date // required
 Place of birth : String
 Place of death : String
 Date of death : Date 
 Parents : [id, id] (max 2)
+profession : String
 
 ```
 
@@ -97,17 +106,21 @@ Parents : [id, id] (max 2)
 ### auth
 |Method|Route|Functionality|
 |---|---|---|
+|GET| / | Renders the Front Page
 |GET|api/auth/me|Check session status|
 |POST|api/auth/signup|Log in user to app and set user to session (Body: username, password)|
 |POST|api/auth/login|Register user to app and set user to session (Body: username, password)|
 |POST|api/auth/logout|Log out user from app and remove session|
+|GET| /mytree | Renders the famaily tree of the user
+|POST| mytree/id | Load data about an individual
+| GET| mytree/d | Show biographical data's of an individual
   
 
 ## Links
 
 ### Trello
 
-[Trello board](https://trello.com/b/eljtbfFm/semya)
+[Board](https://trello.com/b/eljtbfFm/semya)
 
 ### Git
 
@@ -117,9 +130,9 @@ The url to your repository and to your deployed project
 
 [Server repository Link](https://github.com/ChristopheP96/Semya---API)
 
-[Deploy Link Backend](http://heroku.com)
+[Deploy Link Backend](http://heroku.com) To be deployed
 
-[Deploy Link Frontend]()
+[Deploy Link Frontend]() To be deployed
 
 ### Slides
 
