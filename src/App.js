@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className="container">
-          <h1>Basic React Authentication</h1>
+          <h1>Semya - Welcome page</h1>
           <Navbar />
           <Switch>
             <AnonRoute path="/signup" component={Signup} />
