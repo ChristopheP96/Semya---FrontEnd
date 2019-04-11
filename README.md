@@ -49,10 +49,14 @@ User can click on any member on his tree to see biographical information.  (hist
 | url | public | Functionality |
 |-----|-------|---------------|
 | `/` | true | Front Page|
-| `/signup` | true | Signup user |
-| `/login` | true | login user |
+| `/signup` | true | Signup page |
+| `/login` | true | login page |
 | `/home` | false | home page |
-| `/mytree` | false | my tree |
+| `/home/myprofile` | false | user profile
+| `/home/findmatches`| false | user can manage notification <br>or launch a search to find matches
+|`/home/discover`| false | Discover other users and get in touch with them
+| `/mytree` | false | Shows the tree |
+|`/mytree/bio`| false | Shows the biographical details 
 
 ## Services
 
@@ -70,32 +74,34 @@ User can click on any member on his tree to see biographical information.  (hist
 User model
 
 ```
-username - String // required
-email - String // required & unique
-password - String // required
-id - String // required
+Email - String // required & unique
+Password - String // required
+Id - String // required
 First Name - String // required
+Second First Name - String
+Last Name - String // required
 Second Last Name - String
-gender : String // required
-Date of birth : Date // required
-Place of birth : String // required
-profession : String
 ```
 
 Individual
 
 ```
 Id : String // required
-First Name : String // required
-Last Name : String // required
-Second Last Name : String
+First Name - String // required
+Second First Name - String
+Last Name - String // required
+Second Last Name - String
 gender : String // required
-Date of birth : Date // required
+Date of birth : Date
 Place of birth : String
-Place of death : String
-Date of death : Date 
-Parents : [id, id] (max 2)
-profession : String
+GotMarried : Bolean
+DateOfMariage : Date
+PlaceOfMariage : String
+PlaceOfDeath : String
+DateOfDeath : Date 
+Parents : [id, id] 
+Profession : String
+Partner : [id]
 
 ```
 
@@ -111,10 +117,18 @@ profession : String
 |POST|api/auth/signup|Log in user to app and set user to session (Body: username, password)|
 |POST|api/auth/login|Register user to app and set user to session (Body: username, password)|
 |POST|api/auth/logout|Log out user from app and remove session|
-|GET| /mytree | Renders the famaily tree of the user
-|POST| mytree/id | Load data about an individual
-| GET| mytree/d | Show biographical data's of an individual
-  
+|GET| /api/mytree | Renders the famaily tree of the user
+|POST |/api/mytree | Redirects to /api/mytree
+|GET | mytree/bio/id | Renders biographical details of an individual from the tree|
+|POST| mytree/bio/id | Redirects to mytree/bio/
+|GET | /api/home | Renders the home page of an user
+|GET| /api/home/myprofile| Render user's profile
+|POST| /api/home/myprofile| Redirects to /api/home/myprofile
+|GET| /api/home/findmatches| Render user's notifications of matches or let's them lancuh a searsh for matches
+|POST| /api/home/findmatches| Redirects to //api/home/findmatches
+|GET| /api/home/socialize| Render other existing users
+|POST| /api/home/socialize| Redirects to /api/home/socialize
+
 
 ## Links
 
@@ -135,7 +149,5 @@ The url to your repository and to your deployed project
 [Deploy Link Frontend]() To be deployed
 
 ### Slides
-
-The url to your presentation slides
 
 [Slides Link](https://docs.google.com/presentation/d/1EmxYyWHjn8xdyNRBCBe-seNJuOGMbkbhc7dPZqKEdWw/edit#slide=id.p)
