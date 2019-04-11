@@ -67,6 +67,13 @@ User can click on any member on his tree to see biographical information.  (hist
   - auth.me()
   - auth.getUser() // synchronous
 
+- Tree Service 
+  - tree.getId()
+  - tree.addNew()
+
+- User Service
+  - user.getUser()
+
 # Server
 
 ## Models
