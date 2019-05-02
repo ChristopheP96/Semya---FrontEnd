@@ -3,7 +3,7 @@ import axios from "axios";
 class Mytree {
     constructor() {
         this.mytree = axios.create({
-            baseURL: "http://localhost:5000",
+            baseURL: process.env.REACT_APP_API_URL,
             withCredentials: true
         })
     }
