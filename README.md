@@ -124,7 +124,7 @@ Partner : [id]
 |POST|api/auth/signup|Log in user to app and set user to session (Body: username, password)|
 |POST|api/auth/login|Register user to app and set user to session (Body: username, password)|
 |POST|api/auth/logout|Log out user from app and remove session|
-|GET| /api/mytree | Renders the famaily tree of the user
+|GET| /api/mytree | Renders the family tree of the user
 |POST |/api/mytree | Redirects to /api/mytree
 |GET | mytree/bio/id | Renders biographical details of an individual from the tree|
 |POST| mytree/bio/id | Redirects to mytree/bio/

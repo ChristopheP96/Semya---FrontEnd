@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Private from "./pages/Private";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import WelcomePage from "./pages/welcomePage"
 
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
@@ -15,9 +16,9 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className="container">
-          <h1>Semya - Welcome page</h1>
           <Navbar />
           <Switch>
+            <AnonRoute exact path="/" component={WelcomePage} />
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
             <PrivateRoute path="/private" component={Private} />
