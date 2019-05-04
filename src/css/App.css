@@ -1,0 +1,118 @@
+body {
+    background-color: #F2EEE4;
+}
+/*------------------------------------------ Welcome Page */
+.signup-section {
+    background-image: url(../images/welcomeImg.jpg);
+    background-size: 100%;
+    height: 33%;
+    position: relative;
+    min-height: 870px;
+    padding: 0;
+    background-repeat: no-repeat;
+    width: 100%
+}
+
+header {
+    color: white;
+    padding: 40px 0;
+    width: 50%;
+    margin-left: 25%;
+    height: 80px;
+    display: block;
+}
+
+.Brand {
+    float: left;
+    width: 33%;
+    font-weight: 600;
+    font-size: 25px;
+    display: block;
+}
+
+.Brand-Name, 
+.Brand-Icon, 
+.welcome-language-icon-container, 
+.welcome-language-name-container,
+.Brand,
+.Welcome-buttons-container{
+    display: inline;
+}
+
+.Brand-Name{
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.Welcome-buttons-container{
+    width: 33%;
+    padding-left: 25%;
+}
+
+.welcome-language-container{
+    width: 33%;
+    display: block;
+    float: right;
+}
+
+.Welcome-title {
+    float: left;
+    color: white;
+    width: 30%;
+    position: absolute;
+    z-index: 10;
+    top: 45%;
+    right: 15%;
+    text-shadow: #000000 1px 1px
+}
+
+.Welcome-signup {
+    width: 25%;
+    height: 25%;
+    background-color: white;
+    position: absolute;
+    z-index: 10;
+    top: 40%;
+    left: 15%;
+}
+
+.welcome-example{
+    height: 70vh;
+    background-color: #BCCC8F;
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+.welcome-example-container, .welcome-example-img-container {
+    padding-top: 40px;
+}
+
+/* ------------------------------------------ Navbar*/
+.Navbar-firstline {
+    background-color:#557D90;
+    margin: 0;
+    padding: 0; 
+    display: block;
+    height: 20px;
+}
+
+.name-container, 
+.User-Welcome, 
+.language-container, 
+.language-name-container, 
+.language-icon-container, 
+.language-icon,
+.language-name,
+.buttons-container
+{
+    display: inline;
+    padding-left: 4px;
+}
+
+.language-container, .buttons-container{
+    float: right;
+    margin-right: 25px;
+    width: 25%;
+}
+

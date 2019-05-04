@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Switch } from "react-router-dom";
+import './css/AppCssReset.css';
+import './css/App.css';
+
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -20,9 +23,9 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className="container">
+          <AnonRoute exact path="/" component={WelcomePage} />
           <Navbar />
           <Switch>
-            <AnonRoute exact path="/" component={WelcomePage} />
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
             <PrivateRoute exact path="/home" component={Home} />

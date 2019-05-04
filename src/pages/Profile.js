@@ -5,7 +5,7 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <h1>This is your family tree</h1>
+        <h1>This is your profile</h1>
       </div>
     )
   }

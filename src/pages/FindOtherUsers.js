@@ -5,7 +5,7 @@ class FindOtherUsers extends Component {
   render() {
     return (
       <div>
-        <h1>This is your family tree</h1>
+        <h1>Look for other users</h1>
       </div>
     )
   }
