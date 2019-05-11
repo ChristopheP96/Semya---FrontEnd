@@ -77,7 +77,7 @@ header {
 }
 
 .welcome-example{
-    height: 70vh;
+    height: 80vh;
     background-color: #BCCC8F;
     margin: 0;
     color: white;
@@ -86,6 +86,15 @@ header {
 
 .welcome-example-container, .welcome-example-img-container {
     padding-top: 40px;
+}
+
+.welcome-Documentation {
+    height: 80vh;
+}
+
+footer {
+    height: 20vh;
+    background-color: #557D90;
 }
 
 /* ------------------------------------------ Navbar*/
@@ -116,3 +125,25 @@ header {
     width: 25%;
 }
 
+.Navbar-folders {
+    height: 20vh;
+    background-color: lightcyan;
+}
+
+.Navbar-whereamI{
+    height: 5vh;
+    background-color: white;
+}
+
+
+/* ------------------------------------------ Individuals*/
+
+.tree-cell {
+    height: 25px;
+    width: 50px;
+    border: 1px solid black;
+    padding: 20px 20px;
+    margin: 20px;
+    display: inline-block
+
+}

@@ -9,13 +9,13 @@ class WelcomePage extends Component {
         return (
             <div className="Welcome container">
                 <div className="signup-section">
-                    <header>
+                    <header className="">
                         <div className="Brand">
                             <div className="Brand-Icon">
                                 <img src={icon} alt="logo" width="35px" height="35px" />
                             </div>
                             <div className="Brand-Name">
-                                <h1 className="Brand-Name">Semya</h1>
+                                <h1 className="navbar-brand">Semya</h1>
                             </div>
                         </div>
                         <div className="Welcome-buttons-container">
@@ -54,11 +54,13 @@ class WelcomePage extends Component {
                         
                     </div>
                 </div>
-                <div>
+                <div className="welcome-Documentation">
                     <h2>Here come links to articles and documentation</h2>
                 </div>
-                <div className="footer">
-                </div>
+                <footer>
+                    <h3>Semya</h3>
+                    
+                </footer>
             </div>
         );
     }
