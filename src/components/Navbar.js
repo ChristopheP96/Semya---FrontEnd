@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import Earth from "../images/earth.png";
 import { Link } from "react-router-dom";
-import { userInfo } from "os";
 
 class Navbar extends Component {
   render() {
@@ -14,7 +13,7 @@ class Navbar extends Component {
             <div className="Navbar container">
                   <div className="Navbar-firstline">
                     <div className="name-container">
-                      <p>Welcome to {user.username}'s webpage</p>
+                      <a className="navbar-brand">Welcome to {user.username}'s webpage</a>
                     </div>
                     <div className="language-container">
                       <div className="language-icon-container">
@@ -25,9 +24,10 @@ class Navbar extends Component {
                       </div>
                     </div>
                     <div className="buttons-container">
-                      <p onClick={() => logout()} >Logout</p>
+                      <a className="nav-link" onClick={() => logout()} >Logout</a>
                     </div>
                   </div>
+
                   <div className="Navbar-folders">
                     <div className="logo">
                     </div>
@@ -40,10 +40,12 @@ class Navbar extends Component {
                       </ul>
                     </div>
                   </div>
+
                   <div className="Navbar-whereamI">
                   </div>
             </div>
           </>
+
         ) : (
           <>
             <div></div>

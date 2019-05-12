@@ -37,10 +37,6 @@ class TreeProvider extends Component {
     )
   }
 
-  AddNewIndividual(){
-    
-  }
-
     render() {
       return this.state.isLoading ? (
         <h2>Loading tree</h2>

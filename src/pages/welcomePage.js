@@ -1,47 +1,67 @@
 import React, { Component } from "react";
-import icon from "../images/famicon.png"
+import icon from "../images/famicon-bw.png"
 import { Link } from "react-router-dom";
-import Earth from "../images/earth.png";
+import Earth from "../images/white-earth.png";
 import welcomeExample from "../images/welcomeExample.png"
+import Signup from "../pages/Signup"
+import Login from "../pages/Login"
 
 class WelcomePage extends Component {
+    constructor() {
+        super();
+        this.state = {
+          showPopup: false
+        };
+      }
+      togglePopup() {
+        this.setState({
+          showPopup: !this.state.showPopup
+        });
+      }
     render() {
         return (
-            <div className="Welcome container">
+            <div className="Welcome-container">
                 <div className="signup-section">
-                    <header className="">
-                        <div className="Brand">
-                            <div className="Brand-Icon">
-                                <img src={icon} alt="logo" width="35px" height="35px" />
-                            </div>
-                            <div className="Brand-Name">
-                                <h1 className="navbar-brand">Semya</h1>
-                            </div>
+                    <ul className="nav justify-content-center">
+                        <div className="nav-brand">
+                            <li className="">
+                                <img className="nav-item-logo" src={icon} alt="logo" />
+                            </li>
+                            <li className="navbar-brand">
+                                <p class="navbar-brand">
+                                    Semya
+                                </p>
+                            </li>
                         </div>
-                        <div className="Welcome-buttons-container">
-                            <Link to="/login">Login</Link>
+                        <li className="nav-item login">
+                            <Link className="nav-item login" to="/login">Login</Link>
+                        </li>
+                        <li className="nav-item language-globe">
+                            <img className="" src={Earth} alt="Logo" width="16px" height="16px"/>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link disabled language" href="#">English</a>
+                        </li>
+                    </ul>
+                    
+                        <div className="Welcome-title">
+                            <h1>Discover your family</h1>
+                            <h2>Build your family tree and learn about the lives of your ancestors</h2>
+                        </div>  
+                        <div className="Welcome-signup">
+                            <Signup />
+                            <p>or log in if you already have an account</p>
+                            <button onClick={this.togglePopup.bind(this)}>show popup</button>
+                            {this.state.showPopup ? 
+                            <Login
+                                text='Close Me'
+                                closePopup={this.togglePopup.bind(this)}
+                                />
+                            : null
+                            }
                         </div>
-                        <div className="welcome-language-container">
-                            <div className="welcome-language-icon-container">
-                                <img className="welcome-language-icon" src={Earth} alt="Logo" width="16px" height="16px"/>
-                            </div>
-                            <div className="welcome-language-name-container">
-                                <p className="welcome-language-name-container">English</p>
-                            </div>
-                        </div>
-                    </header>
-                </div>
-                
-                <div className="Welcome-title">
-                    <h1>Discover your family</h1>
-                    <h2>Build your family tree and learn about the lives of your ancestors</h2>
-                </div>
-                
-                <div className="Welcome-signup">
-                    <Link to="/signup">Signup</Link>
-                </div>
-                                      
-                
+                    
+                </div>                    
                 <div className="welcome-example">
                     <div className="welcome-example-container">
                         <div className="welcome-example-text-container">
@@ -62,6 +82,7 @@ class WelcomePage extends Component {
                     
                 </footer>
             </div>
+    
         );
     }
 }

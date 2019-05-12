@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { Switch } from "react-router-dom";
-import './css/AppCssReset.css';
-import './css/App.css';
-
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -14,15 +11,17 @@ import FindMatches from "./pages/FindMatches";
 import FindOtherUsers from "./pages/FindOtherUsers";
 import MyTree from "./pages/MyTree";
 
+
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
 import AuthProvider from "./lib/AuthProvider";
+import TreeProvider from "./lib/TreeProvider"
 
 class App extends Component {
   render() {
     return (
       <AuthProvider>
-        <div className="container">
+        <div className="App-container">
           <Navbar />
           <Switch>
             <AnonRoute exact path="/" component={WelcomePage} />

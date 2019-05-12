@@ -21,23 +21,31 @@ class Signup extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div>
+      <div className="signin-page">
+        <h4>Start your genealogical tree straight away</h4>
+        <p>homme femme</p>
         <form onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
+          <label>Fist Name</label>
           <input
             type="text"
             name="username"
             value={username}
             onChange={this.handleChange}
+            className="form-control"
           />
-          <label>Password:</label>
+          <p>Email adress</p>
+          <p>Your Birthday</p>
+          <label>Create a password</label>
           <input
             type="password"
             name="password"
             value={password}
             onChange={this.handleChange}
+            className="form-control"
           />
-          <input type="submit" value="Signup" />
+          <p>Mon père : prénom nom de famille</p>
+          <p>Ma mère : prénom, nom de famille</p>
+          <input type="submit" value="Start my tree" className="btn btn-lg btn-primary btn-block"/>
         </form>
         <p>
           Already have account?
