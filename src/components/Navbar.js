@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import Earth from "../images/earth.png";
 import { Link } from "react-router-dom";
+import DummyParticles from "../components/dummyParticles"
 
 class Navbar extends Component {
   render() {
@@ -10,10 +11,10 @@ class Navbar extends Component {
       <div>
         {isLoggedin ? (
           <>
-            <div className="Navbar container">
+            <div className="">
                   <div className="Navbar-firstline">
                     <div className="name-container">
-                      <a className="navbar-brand">Welcome to {user.username}'s webpage</a>
+                      <a className="">Welcome to {user.username}'s webpage</a>
                     </div>
                     <div className="language-container">
                       <div className="language-icon-container">
@@ -24,24 +25,30 @@ class Navbar extends Component {
                       </div>
                     </div>
                     <div className="buttons-container">
-                      <a className="nav-link" onClick={() => logout()} >Logout</a>
+                      <a className="nav-link nav-logout" onClick={() => logout()}>Logout</a>
                     </div>
                   </div>
 
-                  <div className="Navbar-folders">
-                    <div className="logo">
+                  <div className="-nav-SecondLine">
+                    <div className="nav-zone">
+                     
+                      <p>Semya</p>
+                        <ul className="nav nav-tabs folders">
+                          <li className="nav-item">
+                            <p className="nav-link active"><Link to="/home">Home</Link></p>
+                            </li>
+                          <li className="nav-item">
+                            <p className="nav-link active"><Link to="/mytree">Your family tree</Link></p>
+                            </li>
+                          <li className="nav-item">
+                            <p className="nav-link active"><Link to="/mytree">Documentation</Link></p>
+                            </li>
+                          <li className="nav-item">
+                            <p className="nav-link active"><Link to="/home/myprofile"> Your profile</Link></p>
+                            </li>
+                        </ul>
                     </div>
-                    <div className="folders">
-                      <ul>
-                        <li><Link to="/home">Home</Link></li>
-                        <li><Link to="/mytree">Your family tree</Link></li>
-                        <li><Link to="/mytree">Documentation</Link></li>
-                        <li><Link to="/home/myprofile"> Your profile</Link></li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="Navbar-whereamI">
+                   
                   </div>
             </div>
           </>

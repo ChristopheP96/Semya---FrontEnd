@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
+import Login from "../pages/Login";
+
 class Signup extends Component {
   state = {
     username: "",
@@ -18,6 +19,18 @@ class Signup extends Component {
     this.setState({ [name]: value });
   };
 
+  constructor() {
+    super();
+    this.state = {
+      showPopup: false
+    };
+  }
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+  
   render() {
     const { username, password } = this.state;
     return (
@@ -49,7 +62,14 @@ class Signup extends Component {
         </form>
         <p>
           Already have account?
-          <Link to={"/login"}> Login</Link>
+          <a className="nav-item login" onClick={this.togglePopup.bind(this)} href={this.togglePopup.bind(this)}>Login</a>
+                            {this.state.showPopup ? 
+                            <Login
+                                text='Close Me'
+                                closePopup={this.togglePopup.bind(this)}
+                                />
+                            : null
+                            }
         </p>
       </div>
     );

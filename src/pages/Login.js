@@ -25,22 +25,26 @@ class Login extends Component {
       <div className="login-container text-center">
         <div className="popup_inner">
           <form className="form-signin" onSubmit={this.handleFormSubmit}>
-            <img src={icon} alt="icon" ></img>
-            <label>Username:</label>
+            <img className="popup-logo mb-4" src={icon} alt="icon" />
+            <h1 className="h1 mb-1 font-weight-normal">Welcome to Semya</h1>
+            <h3 className="h3 mb-3 font-weight-normal">Enter your account</h3>
+            <label className="sr-only">Username:</label>
             <input
               type="text"
               name="username"
               value={username}
               onChange={this.handleChange}
+              className="form-control"
             />
-            <label>Password:</label>
+            <label className="sr-only">Password:</label>
             <input
+              className="form-control"
               type="password"
               name="password"
               value={password}
               onChange={this.handleChange}
             />
-            <input type="submit" value="Login" onClick={this.props.closePopup} />
+            <input className="btn btn-lg btn-primary btn-block" type="submit" value="Login" />
             <button onClick={this.props.closePopup}>close me</button>
           </form>
         </div>

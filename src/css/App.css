@@ -1,5 +1,6 @@
-body {
+body, html, .root, .App-container {
     background-color: #F2EEE4;
+    width: 100%;
 
 }
 
@@ -8,6 +9,10 @@ body {
     margin: 0 0;
 }
 /*------------------------------------------ Welcome Page */
+
+.Welcome-container {
+    width: 100%;
+}
 .signup-section {
     background-image: url(../images/welcomeImg.jpg);
     background-size: 100%;
@@ -69,8 +74,8 @@ li{
     width: 30%;
     position: absolute;
     z-index: 10;
-    top: 45%;
-    left: 20%;
+    top: 40%;
+    left: 15%;
     text-shadow: #000000 1px 1px
 }
 
@@ -95,6 +100,7 @@ li{
     bottom: 0;
     margin: auto;
     background-color: rgba(0,0,0, 0.5);
+    z-index: 10;
 }
 
 .popup_inner {
@@ -105,27 +111,123 @@ li{
     bottom: 25%;
     margin: auto;
     background: white;
-  }
+    padding: 30px;
+}
+
+.popup-logo{
+    width: 72px;
+    height: 72px;
+}
 
 .welcome-example{
-    height: 80vh;
-    background-color: #BCCC8F;
+    height: 90vh;
+    background-color: #B7CA92;
     margin: 0;
     color: white;
     text-align: center;
+    width: 100%;
 }
 
 .welcome-example-container, .welcome-example-img-container {
     padding-top: 40px;
 }
 
+.welcome-example-text-container {
+    margin: 0 25%;
+}
+
+.welcome-example-title{
+    padding-bottom: 20px;
+}
+
+[aos="fade"] {
+    opacity: 0;
+    transition-property: opacity;
+  }
+  
+  [aos="fade"].aos-animate {
+    opacity: 1;
+}
+
+.welcome-example-img-container{
+    width: 700px;
+    height: 500px;
+    margin: 0 33%;
+    display: block;
+}
+
+.parents-container, .couple-container{
+    display:block;
+}
+
+.gdParents {
+    position: relative;
+    z-index: 1;
+}
+
+.gdparents-links{
+    position: absolute;
+    z-index: 3;
+    
+}
+
+.gdParents [data-aos] {
+    transition-delay: 0.2s;
+}
+
+.couple [data-aos] {
+    transition-delay: 2s;
+}
+
+.couple-div-man {
+    float: left;  
+}
+
+.div-woman{
+   width: 300px;
+}
+
+.couple-container{
+    height: 300px;
+    width: 800px;
+    border-right: 0;
+    padding-left: 65px;
+    display: flex;
+}
+
+.couple{
+    float: left;
+    z-index: 0;
+}
+
 .welcome-Documentation {
     height: 80vh;
+}
+
+.h-line {
+    width: 90px;
+    height: 2px;
+    background-color: white;
+    margin-top: 130px;
+    z-index: 3;   
+}
+
+.button-family{
+    width: 150px;
+    height: 70px;
 }
 
 footer {
     height: 20vh;
     background-color: #557D90;
+}
+
+.link-gdParents {
+    padding-top: 37px;
+}
+
+.link-couple{
+    padding-top: 79px;
 }
 
 /* ------------------------------------------ Navbar*/
@@ -152,13 +254,16 @@ footer {
 
 .language-container, .buttons-container{
     float: right;
-    margin-right: 25px;
     width: 25%;
 }
 
-.Navbar-folders {
-    height: 20vh;
-    background-color: lightcyan;
+.nav-logout{
+    padding: 0;
+    padding-left: 300px;
+}
+
+.language-container {
+    padding-left: 100px;
 }
 
 .Navbar-whereamI{
@@ -166,6 +271,20 @@ footer {
     background-color: white;
 }
 
+.folders{
+    margin-left: 25%;
+    width: 500px;
+    padding-top: 128px;
+}
+
+.nav-zone{
+    height: 50px;
+}
+
+.particle-container{
+    height: 200px;
+    width: 700px;
+}
 
 /* ------------------------------------------ Individuals*/
 
@@ -185,5 +304,4 @@ footer {
     margin: 20px;
     height: 100px;
     width: 250px;
-   
 }

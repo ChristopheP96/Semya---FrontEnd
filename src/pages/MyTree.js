@@ -11,7 +11,9 @@ class MyTree extends Component {
       <div>Loading Tree</div>
     ):(
       <div>
-        <h1>This is your family tree</h1>
+        <div className="Navbar-whereamI">
+          <h1>{this.props.user.username}'s family tree</h1>
+        </div>
           <div className="container">
           <TreeProvider />
           </div>
