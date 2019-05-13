@@ -24,29 +24,33 @@ class Login extends Component {
     return (
       <div className="login-container text-center">
         <div className="popup_inner">
-          <form className="form-signin" onSubmit={this.handleFormSubmit}>
+          <button type="button" class="close" aria-label="Close" onClick={this.props.closePopup}>
+           <span aria-hidden="true">&times;</span>
+          </button>
             <img className="popup-logo mb-4" src={icon} alt="icon" />
-            <h1 className="h1 mb-1 font-weight-normal">Welcome to Semya</h1>
-            <h3 className="h3 mb-3 font-weight-normal">Enter your account</h3>
-            <label className="sr-only">Username:</label>
-            <input
-              type="text"
-              name="username"
-              value={username}
-              onChange={this.handleChange}
-              className="form-control"
-            />
-            <label className="sr-only">Password:</label>
-            <input
-              className="form-control"
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-            />
-            <input className="btn btn-lg btn-primary btn-block" type="submit" value="Login" />
-            <button onClick={this.props.closePopup}>close me</button>
-          </form>
+            <h1 className="h1 mb-1 font-weight-normal title-login">Welcome to Semya</h1>
+            <h3 className="h3 mb-3 font-weight-normal title-login">Enter your account</h3>
+            <div className="login-credentials">
+              <form className="form-signin" onSubmit={this.handleFormSubmit}>
+                <label className="sr-only label-login-email">Username:</label>
+                  <input
+                    type="text"
+                    name="username"
+                    value={username}
+                    onChange={this.handleChange}
+                    className="form-control login-email"
+                  />
+                <label className="sr-only label-login-email">Password:</label>
+                  <input
+                    className="form-control login-password"
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={this.handleChange}
+                  />
+                <input className="btn btn-lg btn-primary btn-block login-button" type="submit" value="Login" />
+              </form>
+            </div>
         </div>
       </div>
     );

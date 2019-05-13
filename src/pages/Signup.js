@@ -62,14 +62,16 @@ class Signup extends Component {
         </form>
         <p>
           Already have account?
-          <a className="nav-item login" onClick={this.togglePopup.bind(this)} href={this.togglePopup.bind(this)}>Login</a>
-                            {this.state.showPopup ? 
-                            <Login
-                                text='Close Me'
-                                closePopup={this.togglePopup.bind(this)}
-                                />
-                            : null
-                            }
+          <a className="nav-item login" 
+            onClick={this.togglePopup.bind(this)} 
+            href={this.togglePopup.bind(this)}>Login</a>
+              {this.state.showPopup ? 
+                <Login
+                  text='Close Me'
+                closePopup={this.togglePopup.bind(this)}
+                  />
+              : null
+              }
         </p>
       </div>
     );

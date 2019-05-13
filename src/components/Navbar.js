@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import Earth from "../images/earth.png";
 import { Link } from "react-router-dom";
-import DummyParticles from "../components/dummyParticles"
+import icon from "../images/famicon.png"
 
 class Navbar extends Component {
   render() {
@@ -29,13 +29,19 @@ class Navbar extends Component {
                     </div>
                   </div>
 
-                  <div className="-nav-SecondLine">
+                  <div className="nav-SecondLine">
                     <div className="nav-zone">
-                     
-                      <p>Semya</p>
-                        <ul className="nav nav-tabs folders">
+                      <div className="nav-branding">
+                        <div className="nav-branding-logo">
+                          <img className="popup-logo mb-4 nav-branding-logo" src={icon} alt="icon" />
+                          </div>
+                        <div className="nav-branding-name">
+                          <h4 className="nav-branding-name display-4">Semya</h4>
+                          </div>
+                      </div>
+                        <ul className="nav nav-tabs folders" id="myTab" role="tablist">
                           <li className="nav-item">
-                            <p className="nav-link active"><Link to="/home">Home</Link></p>
+                            <p className="nav-link active" ><Link to="/home">Home</Link></p>
                             </li>
                           <li className="nav-item">
                             <p className="nav-link active"><Link to="/mytree">Your family tree</Link></p>
@@ -47,6 +53,7 @@ class Navbar extends Component {
                             <p className="nav-link active"><Link to="/home/myprofile"> Your profile</Link></p>
                             </li>
                         </ul>
+  
                     </div>
                    
                   </div>

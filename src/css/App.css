@@ -100,7 +100,7 @@ li{
     bottom: 0;
     margin: auto;
     background-color: rgba(0,0,0, 0.5);
-    z-index: 10;
+    z-index: 1000;
 }
 
 .popup_inner {
@@ -112,11 +112,37 @@ li{
     margin: auto;
     background: white;
     padding: 30px;
+    z-index: 2001;
+    font: black;
 }
 
 .popup-logo{
     width: 72px;
     height: 72px;
+}
+
+.title-login {
+    color: black!important;
+}
+
+.login-email, .login-password{
+    width: 300px;
+}
+
+.login-credentials{
+    display: block;
+    text-align: center;
+}
+
+.form-signin{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.login-button{
+    margin-top: 30px;
 }
 
 .welcome-example{
@@ -239,6 +265,18 @@ footer {
     height: 20px;
 }
 
+.nav-SecondLine{
+    background-image: url(../images/background-with-trees.jpg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: 30% 60%;
+    width: 100%;
+    min-height: 300px;    
+}
+
 .name-container, 
 .User-Welcome, 
 .language-container, 
@@ -266,24 +304,34 @@ footer {
     padding-left: 100px;
 }
 
+.nav-branding{
+    display: block;
+    padding-left: 40%;
+    padding-top: 8%;
+}
+
+.nav-branding-logo, .nav-branding-name{
+    display: inline-block;
+}
+
+.nav-branding-name{
+   color: white!important;
+   -webkit-text-stroke: 0.5px black;
+}
+
 .Navbar-whereamI{
-    height: 5vh;
+    height: 50px;
     background-color: white;
 }
 
+.nav-link {
+    margin-bottom: 1px;
+}
+
 .folders{
-    margin-left: 25%;
+    margin-left: 33%;
     width: 500px;
-    padding-top: 128px;
-}
-
-.nav-zone{
-    height: 50px;
-}
-
-.particle-container{
-    height: 200px;
-    width: 700px;
+    padding-top: 13px;
 }
 
 /* ------------------------------------------ Individuals*/
