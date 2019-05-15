@@ -14,7 +14,7 @@ class Navbar extends Component {
             <div className="">
                   <div className="Navbar-firstline">
                     <div className="name-container">
-                      <a className="">Welcome to {user.username}'s webpage</a>
+                      <a className="" href="/"> Welcome to { user.firstName }'s webpage</a>
                     </div>
                     <div className="language-container">
                       <div className="language-icon-container">

@@ -4,14 +4,30 @@ import Login from "../pages/Login";
 
 class Signup extends Component {
   state = {
-    username: "",
-    password: ""
+    email: "",
+    password: "",
+    firstName: "", 
+    gender: "", 
+    dateOfBirth: "", 
+    isDead:""
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { username, password } = this.state;
-    this.props.signup({ username, password });
+    const { 
+      email, 
+      password,
+      firstName, 
+      gender, 
+      dateOfBirth
+      } = this.state;
+    this.props.signup({ 
+      email,
+      password,
+      firstName, 
+      gender, 
+      dateOfBirth, 
+      isDead: "no" });
   };
 
   handleChange = event => {
@@ -32,22 +48,47 @@ class Signup extends Component {
   }
   
   render() {
-    const { username, password } = this.state;
+    const { 
+      email, 
+      password, 
+      firstName, 
+      gender, 
+      dateOfBirth 
+      } = this.state;
     return (
       <div className="signin-page">
         <h4>Start your genealogical tree straight away</h4>
+        
         <p>homme femme</p>
+        
         <form onSubmit={this.handleFormSubmit}>
-          <label>Fist Name</label>
+          <label>email</label>
           <input
             type="text"
-            name="username"
-            value={username}
+            name="email"
+            value={email}
             onChange={this.handleChange}
             className="form-control"
           />
-          <p>Email adress</p>
-          <p>Your Birthday</p>
+          
+          <label>Your birthday</label>
+          <input
+            type="date"
+            name="dateOfBirth"
+            value={dateOfBirth}
+            onChange={this.handleChange}
+            className="form-control"
+          />
+
+          <label>First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            value={firstName}
+            onChange={this.handleChange}
+            className="form-control"
+          />
+
           <label>Create a password</label>
           <input
             type="password"
@@ -58,8 +99,10 @@ class Signup extends Component {
           />
           <p>Mon père : prénom nom de famille</p>
           <p>Ma mère : prénom, nom de famille</p>
+          
           <input type="submit" value="Start my tree" className="btn btn-lg btn-primary btn-block"/>
         </form>
+        
         <p>
           Already have account?
           <a className="nav-item login" 

@@ -54,16 +54,30 @@ class AuthProvider extends Component {
   }
 
   signup = user => {
-    const { username, password } = user;
+    const { 
+      email, 
+      password, 
+      firstName, 
+      gender, 
+      dateOfBirth, 
+      isDead } = user;
     auth
-      .signup({ username, password })
+      .signup({ 
+        email, 
+        password,
+        firstName, 
+        gender, 
+        dateOfBirth, 
+        isDead })
       .then(user => {
         this.setState({
           isLoggedin: true,
           user
         });
       })
-      .catch(({ response: { data: error } }) => {
+      .catch(({  
+        email: error
+        }) => {
         this.setState({
           message: error.statusMessage
         });
@@ -71,9 +85,9 @@ class AuthProvider extends Component {
   };
 
   login = user => {
-    const { username, password } = user;
+    const { email, password } = user;
     auth
-      .login({ username, password })
+      .login({ email, password })
       .then(user => {
         this.setState({
           isLoggedin: true,

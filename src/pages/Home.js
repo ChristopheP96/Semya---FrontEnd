@@ -6,7 +6,7 @@ class Home extends Component {
     return (
       <div>
         <div className="Navbar-whereamI">
-          <h1>Welcome {this.props.user.username}, this is the home page</h1>
+          <h1>Welcome {this.props.user.firstName}, this is the home page</h1>
         </div>
       </div>
     );

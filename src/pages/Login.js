@@ -4,14 +4,14 @@ import icon from "../images/famicon.png"
 
 class Login extends Component {
   state = {
-    username: "",
+    email: "",
     password: ""
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { username, password } = this.state;
-    this.props.login({ username, password });
+    const { email, password } = this.state;
+    this.props.login({ email, password });
   };
 
   handleChange = event => {
@@ -20,7 +20,7 @@ class Login extends Component {
   };
 
   render() {
-    const { username, password } = this.state;
+    const { email, password } = this.state;
     return (
       <div className="login-container text-center">
         <div className="popup_inner">
@@ -32,11 +32,11 @@ class Login extends Component {
             <h3 className="h3 mb-3 font-weight-normal title-login">Enter your account</h3>
             <div className="login-credentials">
               <form className="form-signin" onSubmit={this.handleFormSubmit}>
-                <label className="sr-only label-login-email">Username:</label>
+                <label className="sr-only label-login-email">email:</label>
                   <input
                     type="text"
-                    name="username"
-                    value={username}
+                    name="email"
+                    value={email}
                     onChange={this.handleChange}
                     className="form-control login-email"
                   />

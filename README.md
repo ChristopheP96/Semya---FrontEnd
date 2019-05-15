@@ -121,8 +121,8 @@ Partner : [id]
 |---|---|---|
 |GET| / | Renders the Front Page
 |GET|api/auth/me|Check session status|
-|POST|api/auth/signup|Log in user to app and set user to session (Body: username, password)|
-|POST|api/auth/login|Register user to app and set user to session (Body: username, password)|
+|POST|api/auth/signup|Log in user to app and set user to session (Body: email, password)|
+|POST|api/auth/login|Register user to app and set user to session (Body: email, password)|
 |POST|api/auth/logout|Log out user from app and remove session|
 |GET| /api/mytree | Renders the family tree of the user
 |POST |/api/mytree | Redirects to /api/mytree

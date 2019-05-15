@@ -9,16 +9,36 @@ class Auth {
   }
 
   signup(user) {
-    const { username, password } = user;
+    const { 
+      email,
+      password,
+      firstName,
+      gender, 
+      dateOfBirth, 
+      isDead, 
+      mother, 
+      father } = user;
     return this.auth
-      .post("/auth/signup", { username, password })
-      .then(({ data }) => data);
+      .post("/auth/signup", { 
+        email, 
+        password, 
+        firstName,
+        })
+      .then(({ data }) => { 
+        this.auth.post("/mytree/newIndividual", { 
+          firstName,
+          gender, 
+          dateOfBirth, 
+          isDead, 
+          mother, 
+          father})
+      } );
   }
 
   login(user) {
-    const { username, password } = user;
+    const { email, password } = user;
     return this.auth
-      .post("/auth/login", { username, password })
+      .post("/auth/login", { email, password })
       .then(({ data }) => data);
   }
 
