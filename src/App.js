@@ -15,7 +15,6 @@ import MyTree from "./pages/MyTree";
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
 import AuthProvider from "./lib/AuthProvider";
-import TreeProvider from "./lib/TreeProvider"
 
 class App extends Component {
   render() {

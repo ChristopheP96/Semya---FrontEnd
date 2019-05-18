@@ -17,7 +17,8 @@ class Auth {
       dateOfBirth, 
       isDead, 
       mother, 
-      father } = user;
+      father,
+      individualIsUser } = user;
     return this.auth
       .post("/auth/signup", { 
         email, 
@@ -31,7 +32,9 @@ class Auth {
           dateOfBirth, 
           isDead, 
           mother, 
-          father})
+          father,
+          individualIsUser
+        })
       } );
   }
 

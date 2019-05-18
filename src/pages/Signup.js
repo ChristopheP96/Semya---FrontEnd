@@ -9,7 +9,8 @@ class Signup extends Component {
     firstName: "", 
     gender: "", 
     dateOfBirth: "", 
-    isDead:""
+    isDead:"",
+    individualIsUser:""
   };
 
   handleFormSubmit = event => {
@@ -19,7 +20,7 @@ class Signup extends Component {
       password,
       firstName, 
       gender, 
-      dateOfBirth
+      dateOfBirth,
       } = this.state;
     this.props.signup({ 
       email,
@@ -27,7 +28,9 @@ class Signup extends Component {
       firstName, 
       gender, 
       dateOfBirth, 
-      isDead: "no" });
+      isDead: "no",
+      individualIsUser:"yes"
+    });
   };
 
   handleChange = event => {
@@ -58,10 +61,23 @@ class Signup extends Component {
     return (
       <div className="signin-page">
         <h4>Start your genealogical tree straight away</h4>
-        
-        <p>homme femme</p>
-        
+                
         <form onSubmit={this.handleFormSubmit}>
+          
+          <label>Male</label>
+          <input 
+            type="checkbox" 
+            name="male" 
+            value={gender}
+          />
+
+          <label>Female</label>
+            <input 
+            type="checkbox" 
+            name="Female" 
+            value={gender}
+            />      
+
           <label>email</label>
           <input
             type="text"

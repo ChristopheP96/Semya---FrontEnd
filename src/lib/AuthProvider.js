@@ -31,7 +31,8 @@ class AuthProvider extends Component {
   state = {
     isLoggedin: false,
     user: null,
-    isLoading: true
+    isLoading: true,
+    message:""
   };
 
   componentDidMount() {
@@ -60,7 +61,8 @@ class AuthProvider extends Component {
       firstName, 
       gender, 
       dateOfBirth, 
-      isDead } = user;
+      isDead,
+      individualIsUser } = user;
     auth
       .signup({ 
         email, 
@@ -68,7 +70,8 @@ class AuthProvider extends Component {
         firstName, 
         gender, 
         dateOfBirth, 
-        isDead })
+        isDead,
+        individualIsUser })
       .then(user => {
         this.setState({
           isLoggedin: true,

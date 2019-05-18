@@ -54,7 +54,7 @@ class WelcomePage extends Component {
                             <img className="" src={Earth} alt="Logo" width="16px" height="16px"/>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled language" href="#">English</a>
+                            <a className="nav-link disabled language" href="/welcomePage">English</a>
                         </li>
                     </ul>
                     
