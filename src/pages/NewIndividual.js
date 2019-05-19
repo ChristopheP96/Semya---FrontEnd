@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import { withAuth } from "../lib/AuthProvider";
+import treeService from "../lib/treeService"
 
 class NewIndividual extends Component {
     state = {
@@ -16,13 +17,12 @@ class NewIndividual extends Component {
         placeOfDeath: "",
         dateOfDeath: "",
         profession:"",
-        
         mother: "",
         father: "",
         son: "",
         daughter: "",
         husband: "",
-        wife:"",
+        wife: "",
     }
 
     handleNewIndividualSubmit = event => {
@@ -48,7 +48,7 @@ class NewIndividual extends Component {
             husband,
             wife
         } = this.state;
-        this.props.submitIndividual({ 
+        treeService.createIndividual({ 
             firstName,
             secondFirstName,
             lastName,
@@ -69,27 +69,23 @@ class NewIndividual extends Component {
             husband,
             wife 
         });
+        console.log(this.state)
       };
 
     handleChange = event => {
         const { name, value } = event.target;
         this.setState({ [name]: value });
+        console.log(name)
     }
 
-
-  submitIndividual(individual){
-    const { firstName, gender } = individual;
-    axios.post(process.env.REACT_APP_API_URL + '/mytree/newIndividual', { firstName, gender})
-    .then(({ data }) => data);
-  }
 
     render(){
         const {
             firstName,
+            gender,
             secondFirstName,
             lastName,
             secondLastName,
-            gender,
             dateOfBirth,
             placeOfBirth,
             dateOfWedding,
@@ -116,6 +112,12 @@ class NewIndividual extends Component {
                         value={firstName}
                         onChange={this.handleChange}
                     />
+                    <input
+                    type="text"
+                    name="gender"
+                    value={gender}
+                    onChange={this.handleChange}
+                    />
                     <input type="submit" value="Create" />
                 </form>
             </div>    
@@ -124,4 +126,4 @@ class NewIndividual extends Component {
 
 }
 
-export default NewIndividual;
+export default withAuth(NewIndividual);

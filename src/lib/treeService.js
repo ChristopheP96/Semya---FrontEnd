@@ -13,7 +13,34 @@ class TreeService {
       .then(response => response)
       .catch(error => console.log(error))
   };
+
+  createIndividual(individual){
+    const {
+      firstName,
+    
+      gender,
+      
+    } = individual;
+      return this.axios.post(
+        process.env.REACT_APP_API_URL + '/mytree/newIndividual', 
+        { 
+          firstName,
+          gender,
+         
+        })
+        .then(
+          this.getIndividuals()
+      )
+      .catch(error => console.log(error))
+  }
+
+  updateIndividual(individual){
+
+  }
   
+  deleteIndividual(individual){
+
+  }
 };
 
 const treeService = new TreeService();

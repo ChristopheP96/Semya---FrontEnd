@@ -12,6 +12,8 @@ class Tree {
         return this.treeContext.get("/mytree")
         .then(response => response.data)
     }
+
+    
 }
 
 const treeContext = new Tree();

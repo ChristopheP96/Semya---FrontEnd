@@ -1,63 +1,32 @@
 import React, { Component } from 'react';
 import { withAuth } from "../lib/AuthProvider";
 import treeService from "../lib/treeService";
-import NewIndividual from "../components/NewIndividual";
-import TreeComponent from "../components/TreeComponent";
-
-const myTreeData = [
-  {
-    name: "top level",
-    children: [
-      {
-        name: "me",
-        children: [
-          {
-            name: 'My father',
-            attributes: {
-              keyA: 'val A',
-              keyB: 'val B',
-              keyC: 'val C',
-            }, children: [
-              {
-                name: 'My Grand-father',
-              },
-              {
-                name:'',
-              },
-              {
-                name: 'My Grand-mother',
-              },
-            ]
-          },
-          {
-            name:'',
-            id:5,
-          },
-          {
-            name: 'My mother',
-          },
-        ]
-      },
-      {
-        name:"wife",
-      }
-    ]
-  },
-];
+import NewIndividual from "../pages/NewIndividual";
+import IndividualItem from "../components/IndividualItem";
 
 class MyTree extends Component {
   state={
     newIndividual:"",
-    fetchedIndividuals:[]
+    individuals: [],
   }
   
   componentDidMount() {
     treeService.getIndividuals()
       .then( ({data}) => {
-      this.setState( {fetchedIndividuals: data})
-      console.log(this.state.fetchedIndividuals)
+      this.setState( {individuals: data})
       })
   }
+ 
+  renderTree() {
+    return (
+      this.state.individuals.length && this.state.individuals.map((individual, index) => 
+        (
+          <IndividualItem key={index} {...individual}/>
+        )
+      )
+    )
+  }
+
 
   render() {
     return (
@@ -66,10 +35,12 @@ class MyTree extends Component {
           <h1>{this.props.user.firstName}'s family tree</h1>
         </div>
           <div className="container">
+          {this.changeMyTreeData}
+          
           </div>
           <NewIndividual />
            <div className="orgchart" id="orgchart">
-            <TreeComponent myTreeData = { myTreeData }/>
+            { this.renderTree() }
            </div>     
       </div>
     )

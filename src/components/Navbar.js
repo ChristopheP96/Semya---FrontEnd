@@ -14,7 +14,7 @@ class Navbar extends Component {
             <div className="">
                   <div className="Navbar-firstline">
                     <div className="name-container">
-                      <a className="" href="/navbar"> Welcome to { this.props.user.firstName }'s webpage</a>
+                      <a className=""> Welcome to { this.props.user.firstName }'s webpage</a>
                     </div>
                     <div className="language-container">
                       <div className="language-icon-container">
@@ -25,7 +25,7 @@ class Navbar extends Component {
                       </div>
                     </div>
                     <div className="buttons-container">
-                      <a className="nav-link nav-logout" href="/navbar" onClick={() => logout()}>Logout</a>
+                      <a className="nav-link nav-logout" onClick={() => logout()}>Logout</a>
                     </div>
                   </div>
 

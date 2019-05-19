@@ -92,7 +92,16 @@ class WelcomePage extends Component {
                                 <div className="clear"></div>
                             </div>
                             <div data-aos="fade-up" data-aos-offset="800">
-                        <a type="button" class="btn btn-secondary btn-lg active" href={<Signup />} >Start your tree</a>
+                        <a type="button" className="btn btn-secondary btn-lg active"
+                            onClick={this.togglePopup.bind(this)} 
+                                href={this.togglePopup.bind(this)}>Start your tree</a>
+                                {this.state.showPopup ? 
+                                <Signup
+                                    text='Close Me'
+                                    closePopup={this.togglePopup.bind(this)}
+                                    />
+                                : null
+                                }
                             </div>
                         </div>
                         

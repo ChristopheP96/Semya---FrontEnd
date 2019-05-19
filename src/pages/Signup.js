@@ -7,13 +7,14 @@ class Signup extends Component {
     email: "",
     password: "",
     firstName: "", 
+    lastName:"",
     gender: "", 
     dateOfBirth: "", 
     isDead:"",
     individualIsUser:""
   };
 
-  handleFormSubmit = event => {
+  handleFormSubmitSignUp = event => {
     event.preventDefault();
     const { 
       email, 
@@ -48,21 +49,21 @@ class Signup extends Component {
     this.setState({
       showPopup: !this.state.showPopup
     });
-  }
-  
+  }  
+
   render() {
     const { 
       email, 
       password, 
       firstName, 
       gender, 
-      dateOfBirth 
+      dateOfBirth
       } = this.state;
     return (
       <div className="signin-page">
         <h4>Start your genealogical tree straight away</h4>
                 
-        <form onSubmit={this.handleFormSubmit}>
+        <form onSubmit={this.handleFormSubmitSignUp}>
           
           <label>Male</label>
           <input 
@@ -113,11 +114,8 @@ class Signup extends Component {
             onChange={this.handleChange}
             className="form-control"
           />
-          <p>Mon père : prénom nom de famille</p>
-          <p>Ma mère : prénom, nom de famille</p>
-          
-          <input type="submit" value="Start my tree" className="btn btn-lg btn-primary btn-block"/>
-        </form>
+            <input type="submit" value="Start my tree" className="btn btn-lg btn-primary btn-block"/>
+        </form>      
         
         <p>
           Already have account?
