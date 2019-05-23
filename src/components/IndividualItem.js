@@ -1,13 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
-const IndividualItem = props =>  {
+class IndividualItem extends Component {
+  
+  render() {
     return (
-      <div className='tree-cell'>
-        <h1>{props.firstName}</h1>
-        <p>{props.gender}</p>
-      </div>
+      <Link 
+      className='tree-cell IndividualItem-button'
+      to="/mytree/{this.props.id}"
+       >
+          <h1>{this.props.firstName}</h1>
+      </Link>
     )
-}
+  }
 
+}
 
 export default IndividualItem; 

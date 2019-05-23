@@ -5,9 +5,11 @@ import NewIndividual from "../pages/NewIndividual";
 import IndividualItem from "../components/IndividualItem";
 
 class MyTree extends Component {
+
   state={
     newIndividual:"",
     individuals: [],
+    individual: []
   }
   
   componentDidMount() {
@@ -19,9 +21,12 @@ class MyTree extends Component {
  
   renderTree() {
     return (
-      this.state.individuals.length && this.state.individuals.map((individual, index) => 
+      this.state.individuals.length 
+      && this.state.individuals.map((individual, key) => 
         (
-          <IndividualItem key={index} {...individual}/>
+          <li>
+            <IndividualItem key={key} {...individual}/>
+          </li>
         )
       )
     )
@@ -35,12 +40,12 @@ class MyTree extends Component {
           <h1>{this.props.user.firstName}'s family tree</h1>
         </div>
           <div className="container">
-          {this.changeMyTreeData}
-          
           </div>
           <NewIndividual />
            <div className="orgchart" id="orgchart">
+            <ul>
             { this.renderTree() }
+            </ul>
            </div>     
       </div>
     )

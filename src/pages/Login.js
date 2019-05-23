@@ -24,7 +24,7 @@ class Login extends Component {
     return (
       <div className="login-container text-center">
         <div className="popup_inner">
-          <button type="button" class="close" aria-label="Close" onClick={this.props.closePopup}>
+          <button type="button" className="close" aria-label="Close" onClick={this.props.closePopup}>
            <span aria-hidden="true">&times;</span>
           </button>
             <img className="popup-logo mb-4" src={icon} alt="icon" />

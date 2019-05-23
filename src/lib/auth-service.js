@@ -24,6 +24,7 @@ class Auth {
         email, 
         password, 
         firstName,
+        gender
         })
       .then(({ data }) => { 
         this.auth.post("/mytree/newIndividual", { 

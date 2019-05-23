@@ -82,7 +82,7 @@ class AuthProvider extends Component {
         email: error
         }) => {
         this.setState({
-          message: error.statusMessage
+          message: "error"
         });
       });
   };

@@ -45,8 +45,7 @@ li{
 
 .nav-item-logo{
     height: 60px;
-    margin-bottom: 50px;
-    
+    margin-bottom: 50px;   
 }
 
 .language-globe {
@@ -56,11 +55,22 @@ li{
 
 .language{
     width: 70px;
+    font-size: 20px;
 }
 
 .login{
-    margin-top: 7px;
     color: white;
+    padding-top: 37px;
+}
+
+.nav-item-login {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline;
+    color: white;
+    font-size: 20px;
 }
 
 .nav {
@@ -300,6 +310,15 @@ footer {
     padding-left: 300px;
 }
 
+.logout-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline;
+    padding-left: 33%;
+}
+
 .language-container {
     padding-left: 100px;
 }
@@ -307,7 +326,7 @@ footer {
 .nav-branding{
     display: block;
     padding-left: 40%;
-    padding-top: 8%;
+    padding-top: 100px;
 }
 
 .nav-branding-logo, .nav-branding-name{
@@ -330,31 +349,131 @@ footer {
 
 .folders{
     margin-left: 33%;
-    width: 500px;
+    width: 900px;
     padding-top: 13px;
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
 }
 
 /* ------------------------------------------ Individuals*/
-
-.tree-cell {
-    height: 25px;
-    width: 50px;
-    border: 1px solid black;
-    padding: 20px 20px;
-    margin: 20px;
-    display: inline-block
-
-}
 
 .NewIndividual-form {
     border: 1px solid black;
     padding: 20px 20px;
     margin: 20px;
-    height: 100px;
+    height: 550px;
     width: 250px;
 }
 
-.rd3t-tree-container {
-    width: 700px;
-    height: 1000px;
+.orgchart ul {
+    padding-top: 20px; 
+    position: relative;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
 }
+
+.IndividualItem-button {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    text-decoration: none;
+    border-style: solid ;
+    border-width: 1px;
+    border: #ccc;
+}
+
+.orgchart li {
+    float: left; 
+    text-align: center;
+	list-style-type: none;
+	position: relative;
+    padding: 25px 50px 0 50px;
+    
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+.orgchart li::before, .orgchart li::after{
+	content: '';
+	position: absolute; top: 0; right: 50%;
+	border-top: 1px solid #ccc;
+	width: 50%; height: 20px;
+}
+
+.orgchart li::after{
+	right: auto; left: 50%;
+	border-left: 1px solid #ccc;
+}
+
+.orgchart li:only-child::after, 
+.orgchart li:only-child::before {
+	display: none;
+}
+
+/*Remove space from the top of single children*/
+.orgchart li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.orgchart li:first-child::before, .orgchart li:last-child::after{
+	border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.orgchart li:last-child::before{
+	border-right: 1px solid #ccc;
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+.orgchart li:first-child::after{
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+
+/* add downward connectors from parents*/
+.orgchart ul ul::before{
+	content: '';
+	position: absolute; top: 0; left: 50%;
+	border-left: 1px solid #ccc;
+	width: 0; height: 20px;
+}
+
+.orgchart li a{
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: #666;
+	font-family: arial, verdana, tahoma;
+	font-size: 11px;
+	display: inline-block;
+	
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/* hover effects*/
+/*apply the hover effect the the lineage of the element also*/
+.orgchart li a:hover, .orgchart li a:hover+ul li a {
+	background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.orgcharte li a:hover+ul li::after, 
+.orgchart li a:hover+ul li::before, 
+.orgchart li a:hover+ul::before, 
+.orgchart li a:hover+ul ul::before{
+	border-color:  #94a0b4;
+}
+
+/*Thats all. I hope you enjoyed it.
+Thanks :)*/

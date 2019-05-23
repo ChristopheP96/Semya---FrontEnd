@@ -39,9 +39,14 @@ class WelcomePage extends Component {
                             </li>
                         </div>
                         <li className="nav-item login">
-                            <a className="nav-item login" 
-                            onClick={this.togglePopup.bind(this)} 
-                            href={this.togglePopup.bind(this)}>Login</a>
+                            <button 
+                                className="nav-item-login" 
+                                onClick={this.togglePopup.bind(this)} 
+                                href={this.togglePopup.bind(this)}
+                            >
+                                Login
+                            </button>
+                            
                             {this.state.showPopup ? 
                             <Login
                                 text='Close Me'

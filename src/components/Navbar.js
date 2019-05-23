@@ -14,7 +14,7 @@ class Navbar extends Component {
             <div className="">
                   <div className="Navbar-firstline">
                     <div className="name-container">
-                      <a className=""> Welcome to { this.props.user.firstName }'s webpage</a>
+                    Welcome to Semya
                     </div>
                     <div className="language-container">
                       <div className="language-icon-container">
@@ -25,7 +25,7 @@ class Navbar extends Component {
                       </div>
                     </div>
                     <div className="buttons-container">
-                      <a className="nav-link nav-logout" onClick={() => logout()}>Logout</a>
+                      <button className="logout-button" onClick={() => logout()}>Logout</button>
                     </div>
                   </div>
 

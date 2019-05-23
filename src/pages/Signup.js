@@ -65,24 +65,22 @@ class Signup extends Component {
                 
         <form onSubmit={this.handleFormSubmitSignUp}>
           
-          <label>Male</label>
-          <input 
-            type="checkbox" 
-            name="male" 
-            value={gender}
-          />
-
-          <label>Female</label>
-            <input 
-            type="checkbox" 
-            name="Female" 
-            value={gender}
-            />      
-
-          <label>email</label>
+        <label>gender</label>
           <input
             type="text"
+            name="gender"
+            placeholder="gender"
+            value={gender}
+            onChange={this.handleChange}
+            className="form-control"
+          />
+          
+          
+          <label>email</label>
+          <input
+            type="email"
             name="email"
+            placeholder="name@example.com"
             value={email}
             onChange={this.handleChange}
             className="form-control"
@@ -103,6 +101,7 @@ class Signup extends Component {
             name="firstName"
             value={firstName}
             onChange={this.handleChange}
+            placeholder="Your First Name"
             className="form-control"
           />
 
@@ -111,6 +110,7 @@ class Signup extends Component {
             type="password"
             name="password"
             value={password}
+            placeholder="Enter a password"
             onChange={this.handleChange}
             className="form-control"
           />
